@@ -4,6 +4,8 @@ const server = new Server();
 
 server.on("connection", (Socket) =>{
     console.log(`Nueva conexion de: ${Socket.remoteAddress}:${Socket.remotePort}`);
+
+    Socket.setEncoding('utf-8');
     Socket.on("data",(data) => {
         console.log(data);
     });
