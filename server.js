@@ -8,6 +8,7 @@ server.on("connection", (Socket) =>{
     Socket.setEncoding('utf-8');
     Socket.on("data",(data) => {
         console.log(data);
+        Socket.write(data);
     });
 } );
 
