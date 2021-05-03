@@ -5,3 +5,4 @@ socket.connect({
     host: 'localhost', port: 8000
 
 });
+socket.write('Hola');
