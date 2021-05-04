@@ -11,14 +11,15 @@ socket.connect({
 
 socket.setEncoding('utf-8');
 readline.on("line", (line) =>{
+    socket.write(line)
     if(line === chao){
         socket.end();
-        process.exit(0);
 
     }
-    socket.write(line)
+   
 });
 socket.on("data",(data) => {
     console.log(data);
 
 });
+socket.on("closed",() => process.exit(0));
