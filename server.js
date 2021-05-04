@@ -13,6 +13,9 @@ server.on("connection", (Socket) =>{
             console.log( `${remoteSocket}-> ${data}`);
         }
     });
+    Socket.on("close",()=> {
+        console.log(`conexion ${remoteSocket} cerrada`);
+    })
 } );
 
 server.listen({

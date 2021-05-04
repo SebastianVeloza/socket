@@ -22,4 +22,4 @@ socket.on("data",(data) => {
     console.log(data);
 
 });
-socket.on("closed",() => process.exit(0));
+socket.on("close",() => process.exit(0));
