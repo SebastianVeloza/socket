@@ -1,14 +1,17 @@
 
 const { Server } = require('net');
 const server = new Server();
-
+const chao = 'chao';
 server.on("connection", (Socket) =>{
     console.log(`Nueva conexion de: ${Socket.remoteAddress}:${Socket.remotePort}`);
 
     Socket.setEncoding('utf-8');
     Socket.on("data",(data) => {
-        console.log(data);
-        Socket.write(data);
+        if(data===chao){
+            Socket.end();
+        }else{ 
+            console.log( `${remoteSocket}-> ${data}`);
+        }
     });
 } );
 
